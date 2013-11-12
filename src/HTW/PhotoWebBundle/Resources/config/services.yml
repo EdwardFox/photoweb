@@ -1,0 +1,7 @@
+parameters:
+#    htw_photo_web.example.class: HTW\PhotoWebBundle\Example
+
+services:
+#    htw_photo_web.example:
+#        class: %htw_photo_web.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,3 @@
+htw_photo_web_homepage:
+    pattern:  /
+    defaults: { _controller: HTWPhotoWebBundle:Default:index }
