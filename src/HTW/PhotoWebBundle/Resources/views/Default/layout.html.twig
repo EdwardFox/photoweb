@@ -18,3 +18,9 @@
 	{% block content %}{% endblock content %}
 </div>
 {% endblock %}
+
+{% block javascripts %}
+    {% javascripts '@HTWPhotoWebBundle/Resources/public/js/*' output='js/compiled/main.js' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
