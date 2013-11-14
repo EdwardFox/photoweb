@@ -1,5 +1,10 @@
 {% extends 'HTWPhotoWebBundle:Default:layout.html.twig' %}
 
 {% block content %}
-Hello random user!
+	{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+	    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}<br />
+	    Index page for logged in users.
+	{% else %}
+		Index page for not logged in users.
+	{% endif %}
 {% endblock %}
