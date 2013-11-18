@@ -7,3 +7,4 @@
 *.idea
 *.iml
 /bin/*
+/web/uploads/

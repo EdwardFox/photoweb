@@ -1,0 +1,6 @@
+# src/HTW/PhotoWebBundle/Resources/config/validation.yml
+HTW\PhotoWebBundle\Entity\Photo:
+    properties:
+        file:
+            - File:
+                maxSize: 6000000

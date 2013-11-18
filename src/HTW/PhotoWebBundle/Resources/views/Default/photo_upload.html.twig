@@ -1,0 +1,10 @@
+{% extends 'HTWPhotoWebBundle:Default:layout.html.twig' %}
+
+{% block content %}
+	{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+	    Upload a photo:<br>
+	    {{ form(form) }}
+	{% else %}
+		Log in to upload photos.
+	{% endif %}
+{% endblock %}
