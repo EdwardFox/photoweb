@@ -10,3 +10,8 @@ user:
     resource: 	"@HTWPhotoWebBundle/Controller/UserController.php"
     prefix: 	/users
     type:     	annotation
+
+myarea:
+    resource: 	"@HTWPhotoWebBundle/Controller/MyAreaController.php"
+    prefix: 	/myarea
+    type:     	annotation

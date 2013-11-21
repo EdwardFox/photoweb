@@ -15,14 +15,14 @@
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li{% if app.request.attributes.get('_route') == 'htw_photoweb_homepage' %} class="active"{% endif %}><a href="{{ path('htw_photoweb_homepage') }}">Home</a></li>
+					<li{% if app.request.attributes.get('_route') == 'htw_photoweb_user_list' %} class="active"{% endif %}><a href="{{ path('htw_photoweb_user_list') }}">Users</a></li>
 					<li{% if app.request.attributes.get('_route') == 'htw_photoweb_staticpage_about' %} class="active"{% endif %}><a href="{{ path('htw_photoweb_staticpage_about') }}">About</a></li>
 					<li{% if app.request.attributes.get('_route') == 'htw_photoweb_staticpage_contact' %} class="active"{% endif %}><a href="{{ path('htw_photoweb_staticpage_contact') }}">Contact</a></li>
 				</ul>
 
-				<ul class="nav navbar-nav navbar-right">
-					<li{% if app.request.attributes.get('_route') == 'htw_photoweb_user_list' %} class="active"{% endif %}><a href="{{ path('htw_photoweb_user_list') }}">Users</a></li>
-				    
+				<ul class="nav navbar-nav navbar-right">				    
 					{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+					    <li{% if app.request.attributes.get('_route') == 'htw_photoweb_myarea_index' %} class="active"{% endif %}><a href="{{ path('htw_photoweb_myarea_index') }}">My area</a></li>
 				        <li>    
 					        <a href="{{ path('fos_user_security_logout') }}">
 					            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
