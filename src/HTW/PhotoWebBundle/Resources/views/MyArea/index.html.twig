@@ -2,4 +2,10 @@
 
 {% block content %}
 	<a href="{{ path('htw_photoweb_photo_upload') }}">Upload a new photo</a>
+
+	<div>
+		{% for photo in photos %}
+		    <img alt="" src="{{ asset(photo.getWebPath()) }}">
+		{% endfor %}
+	</div>
 {% endblock %}

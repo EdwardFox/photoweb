@@ -22,6 +22,16 @@ class MyAreaController extends Controller
      */
     public function indexAction()
     {
-        return array();
+        $userID = $this->getUser()->getId();
+
+        $repository = $this->getDoctrine()
+                           ->getRepository('HTWPhotoWebBundle:Photo');
+
+        $query = $repository->createQueryBuilder('p')
+                            ->where('p.user = :userID')
+                            ->setParameter('userID', $userID)
+                            ->getQuery();
+
+        return array('photos' => $query->getResult());
     }
 }
