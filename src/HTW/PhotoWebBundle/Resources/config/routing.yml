@@ -1,3 +1,12 @@
-htw_photo_web_homepage:
+htw_photoweb_homepage:
     pattern:  /
     defaults: { _controller: HTWPhotoWebBundle:Default:index }
+
+static:
+    resource: 	"@HTWPhotoWebBundle/Controller/StaticPageController.php"
+    type:     	annotation
+
+user:
+    resource: 	"@HTWPhotoWebBundle/Controller/UserController.php"
+    prefix: 	/users
+    type:     	annotation
