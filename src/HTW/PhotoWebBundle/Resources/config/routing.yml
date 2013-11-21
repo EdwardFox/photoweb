@@ -1,7 +1,23 @@
-htw_photo_web_homepage:
+htw_photoweb_homepage:
     pattern:  /
     defaults: { _controller: HTWPhotoWebBundle:Default:index }
 
-htw_photo_web_photo_upload:
-    pattern: /photo/upload
-    defaults: { _controller: HTWPhotoWebBundle:Photo:upload }
+
+photo:
+    resource: 	"@HTWPhotoWebBundle/Controller/PhotoController.php"
+    prefix: 	/photo
+    type:     	annotation
+
+static:
+    resource: 	"@HTWPhotoWebBundle/Controller/StaticPageController.php"
+    type:     	annotation
+
+user:
+    resource: 	"@HTWPhotoWebBundle/Controller/UserController.php"
+    prefix: 	/users
+    type:     	annotation
+
+myarea:
+    resource: 	"@HTWPhotoWebBundle/Controller/MyAreaController.php"
+    prefix: 	/myarea
+    type:     	annotation

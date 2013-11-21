@@ -1,0 +1,13 @@
+{% extends 'HTWPhotoWebBundle::layout.html.twig' %}
+
+{% block content %}
+	<a href="{{ path('htw_photoweb_user_list') }}">
+    	&lt; back to overview	
+    </a><br /><br />
+
+	ID: {{ user.id }}<br />
+	Name: {{ user.username }}<br />
+	Mail: {{ user.email }}<br />
+	Last Login Date: {{ user.lastLogin|date('d.m.Y') }}<br />
+	Is locked: {{ user.locked ? 'yes' : 'no' }}<br /><br />
+{% endblock %}

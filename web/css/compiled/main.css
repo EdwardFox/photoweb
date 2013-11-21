@@ -2634,8 +2634,8 @@ input[type="button"].btn-block {
 
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('../../../bundles/htwphotoweb/fonts/glyphicons-halflings-regular.eot');
-  src: url('../../../bundles/htwphotoweb/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../../../bundles/htwphotoweb/fonts/glyphicons-halflings-regular.woff') format('woff'), url('../../../bundles/htwphotoweb/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../../../bundles/htwphotoweb/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('../../bundles/htwphotoweb/fonts/glyphicons-halflings-regular.eot');
+  src: url('../../bundles/htwphotoweb/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../../bundles/htwphotoweb/fonts/glyphicons-halflings-regular.woff') format('woff'), url('../../bundles/htwphotoweb/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../../bundles/htwphotoweb/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
 .glyphicon {
@@ -7096,3 +7096,4 @@ td.visible-print {
     display: none !important;
   }
 }
+body { padding-top: 70px; }

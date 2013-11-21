@@ -3,12 +3,23 @@
 namespace HTW\PhotoWebBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use HTW\PhotoWebBundle\Entity\Photo;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
+
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+
+use HTW\PhotoWebBundle\Entity\Photo;
 
 class PhotoController extends Controller
 {
+
+	/**
+     * @Route("/upload")
+     */
     public function uploadAction(Request $request)
     {
     	$user = $this->getUser()->getId();
@@ -28,9 +39,9 @@ class PhotoController extends Controller
 		    $em->persist($photo);
 		    $em->flush();
 
-		    return $this->redirect($this->generateUrl('htw_photo_web_photo_upload'));
+		    return $this->redirect($this->generateUrl('htw_photoweb_photo_upload'));
 		}
 
-	    return $this->render('HTWPhotoWebBundle:Default:photo_upload.html.twig', array('form' => $form->createView()));
+	    return $this->render('HTWPhotoWebBundle:Photo:upload.html.twig', array('form' => $form->createView()));
     }
 }

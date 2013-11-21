@@ -1,0 +1,9 @@
+{% extends 'HTWPhotoWebBundle::layout.html.twig' %}
+
+{% block content %}
+	{% for user in users %}
+	    <a href="{{ path('htw_photoweb_user_show', {'user': user.id}) }}">
+	    	{{ user.id }} - {{ user.username }}
+	    </a><br />
+	{% endfor %}
+{% endblock %}
