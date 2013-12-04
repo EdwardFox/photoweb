@@ -8,3 +8,5 @@
 *.iml
 /bin/*
 /web/uploads/
+/web/css
+/web/js

@@ -1,4 +1,4 @@
-{% extends 'HTWPhotoWebBundle::layout.html.twig' %}
+{% extends app.request.xmlHttpRequest ? 'HTWPhotoWebBundle::ajax.html.twig' : 'HTWPhotoWebBundle::layout.html.twig' %}
 
 {% block content %}
     {% block fos_user_content %}{% endblock %}

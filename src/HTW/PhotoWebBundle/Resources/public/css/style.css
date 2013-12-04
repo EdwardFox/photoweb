@@ -1,1 +1,11 @@
-body { padding-top: 70px; }
+body { 
+	padding-top: 70px; 
+}
+
+.ajax-popup {
+	background: #fff;
+	padding:20px;
+	position: relative;
+	max-width:600px; 
+	margin: 20px auto;
+}
