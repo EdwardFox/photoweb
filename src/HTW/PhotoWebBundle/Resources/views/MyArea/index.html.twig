@@ -3,9 +3,9 @@
 {% block content %}
 	<a href="{{ path('htw_photoweb_photo_upload') }}">Upload a new photo</a>
 
-	<div>
+	<div class="popup-gallery">
 		{% for photo in photos %}
-		    <img alt="" src="{{ photo.getWebPath() | imagine_filter('thumbnail') }}">
+		    <a href="{{ asset(photo.getWebPath()) }}" title="{{ photo.getName() }}"><img alt="" src="{{ photo.getWebPath() | imagine_filter('thumbnail') }}"></a>
 		{% endfor %}
 	</div>
 {% endblock %}

@@ -164,4 +164,129 @@ class Photo
             unlink($file);
         }
     }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Photo
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set path
+     *
+     * @param string $path
+     * @return Photo
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+    
+        return $this;
+    }
+
+    /**
+     * Get path
+     *
+     * @return string 
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return Photo
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string 
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set user
+     *
+     * @param integer $user
+     * @return Photo
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return integer 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Set album
+     *
+     * @param integer $album
+     * @return Photo
+     */
+    public function setAlbum($album)
+    {
+        $this->album = $album;
+    
+        return $this;
+    }
+
+    /**
+     * Get album
+     *
+     * @return integer 
+     */
+    public function getAlbum()
+    {
+        return $this->album;
+    }
 }
