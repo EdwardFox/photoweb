@@ -5,7 +5,7 @@
 
 	<div>
 		{% for photo in photos %}
-		    <img alt="" src="{{ asset(photo.getWebPath()) }}">
+		    <img alt="" src="{{ asset(photo.getWebPath()) | imagine_filter('thumbnail', true) }}">
 		{% endfor %}
 	</div>
 {% endblock %}
