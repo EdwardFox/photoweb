@@ -1,4 +1,6 @@
 $(document).ready(function() {
+	$(document).foundation();
+	
  	$('.login-button, .register-button').magnificPopup({
 		type: 'ajax'
 	});

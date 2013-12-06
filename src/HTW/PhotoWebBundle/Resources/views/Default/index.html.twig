@@ -1,6 +1,7 @@
 {% extends 'HTWPhotoWebBundle::layout.html.twig' %}
 
 {% block content %}
+	<h2>Home</h2>
 	{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 	    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}<br />
 	    Index page for logged in users.

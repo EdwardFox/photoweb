@@ -1,11 +1,15 @@
 {% extends 'HTWPhotoWebBundle::layout.html.twig' %}
 
 {% block content %}
-	<a href="{{ path('htw_photoweb_photo_upload') }}">Upload a new photo</a>
+	<h2>My Area</h2>
+	
+	<div>
+		<a class="button tiny radius" href="{{ path('htw_photoweb_photo_upload') }}">Upload</a>
+	</div>
 
 	<div class="popup-gallery">
 		{% for photo in photos %}
-		    <a href="{{ asset(photo.getWebPath()) }}" title="{{ photo.getName() }}"><img alt="" src="{{ photo.getWebPath() | imagine_filter('thumbnail') }}"></a>
+		    <a class="th" href="{{ asset(photo.getWebPath()) }}" title="{{ photo.getName() }}"><img alt="" src="{{ photo.getWebPath() | imagine_filter('thumbnail') }}"></a>
 		{% endfor %}
 	</div>
 {% endblock %}
