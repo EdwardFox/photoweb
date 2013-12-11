@@ -48,6 +48,7 @@ class Photo
     public $album;
 
     /**
+     * @Assert\NotBlank
      * @Assert\File(maxSize="6000000")
      */
     private $file;
