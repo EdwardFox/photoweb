@@ -11,6 +11,15 @@
             </ul>
 
             <section class="top-bar-section">
+                 <!-- Left Nav Section -->
+                <ul class="left show-for-small-only">                    
+                    <li><a href="{{ path('htw_photoweb_search_search') }}">Search</a></li>
+                </ul>
+
+                <ul class="left show-for-medium-up">                    
+                    <li><a href="{{ path('htw_photoweb_search_search') }}">Search</a></li>
+                </ul>
+
                  <!-- Right Nav Section -->
                 <ul class="right show-for-small-only">                    
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
