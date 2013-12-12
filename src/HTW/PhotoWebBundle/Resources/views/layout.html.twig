@@ -11,14 +11,6 @@
             </ul>
 
             <section class="top-bar-section">
-                <!-- Left Nav Section -->
-                <!-- <ul class="left">
-                        <li{% if app.request.attributes.get('_route') == 'htw_photoweb_homepage' %} class="active"{% endif %}><a href="{{ path('htw_photoweb_homepage') }}">Home</a></li>
-                        <li{% if app.request.attributes.get('_route') == 'htw_photoweb_user_list' %} class="active"{% endif %}><a href="{{ path('htw_photoweb_user_list') }}">Users</a></li>
-                        <li{% if app.request.attributes.get('_route') == 'htw_photoweb_staticpage_about' %} class="active"{% endif %}><a href="{{ path('htw_photoweb_staticpage_about') }}">About</a></li>
-                        <li{% if app.request.attributes.get('_route') == 'htw_photoweb_staticpage_contact' %} class="active"{% endif %}><a href="{{ path('htw_photoweb_staticpage_contact') }}">Contact</a></li>
-                </ul> -->
-
                  <!-- Right Nav Section -->
                 <ul class="right show-for-small-only">                    
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
@@ -36,7 +28,7 @@
 
                 <ul class="right show-for-medium-up">                    
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                        <!-- <li{% if app.request.attributes.get('_route') == 'htw_photoweb_myarea_index' %} class="active"{% endif %}><a href="{{ path('htw_photoweb_myarea_index') }}">My area</a></li> -->
+                        <li class="has-form{% if app.request.attributes.get('_route') == 'htw_photoweb_myarea_index' %} active{% endif %}"><a class="button radius" href="{{ path('htw_photoweb_myarea_index') }}">My area</a></li>
                         <li class="has-form">    
                             <a class="button radius logout-button" href="{{ path('fos_user_security_logout') }}">
                                     {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
@@ -51,32 +43,20 @@
         </nav>
     </div>
 
-    <div class="row">
-        <div class="large-12 columns">{% block content %}{% endblock content %}</div>
+    <div id="main">
+        <div class="row">
+            <div class="large-12 columns">{% block content %}{% endblock content %}</div>
+        </div>
     </div>
 
     <footer class="row">
       <div class="large-12 columns">
-        <hr>
-
         <div class="row">
           <div class="small-6 columns">
             <ul class="inline-list">
-              <li>
-                <a href="#">Link 1</a>
-              </li>
-
-              <li>
-                <a href="#">Link 2</a>
-              </li>
-
-              <li>
-                <a href="#">Link 3</a>
-              </li>
-
-              <li>
-                <a href="#">Link 4</a>
-              </li>
+                <li><a href="{{ path('htw_photoweb_staticpage_privacy') }}">Datenschutz</a></li>
+                <li><a href="{{ path('htw_photoweb_staticpage_imprint') }}">Impressum</a></li>
+                <li><a href="{{ path('htw_photoweb_staticpage_contact') }}">Kontakt</a></li>
             </ul>
           </div>
 

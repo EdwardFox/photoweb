@@ -18,6 +18,7 @@
 
 .contain-to-grid {
 	@include box-shadow(#3b3a3c 0px 5px 10px);
+	position: relative;
 }
 
 
@@ -57,4 +58,16 @@
 			@include background(linear-gradient(#a2a2a2, #838383) !important);
 		}
 	}
+}
+
+#main {
+	background: #565557;
+	padding: 15px 0 20px;
+	margin-bottom: 15px;
+	// @include box-shadow(#3b3a3c 0px 5px 10px);
+	// @include box-shadow(inset 0px -5px 10px #3b3a3c);
+}
+
+footer {
+	color:#565557;
 }

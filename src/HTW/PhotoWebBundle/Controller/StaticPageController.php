@@ -16,26 +16,20 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 class StaticPageController extends Controller
 {
     /**
-     * @Route("/about")
-     * @Method("GET")
-     * @Template("HTWPhotoWebBundle:StaticPage:general.html.twig", vars={"static_content"})
+     * @Route("/privacy")
+     * @Template("HTWPhotoWebBundle:StaticPage:privacy.html.twig")
      */
-    public function aboutAction()
-    {
-    	$content = "About Page content";
+    public function privacyAction() { return array(); }
 
-    	return array('static_content' => $content);
-    }
+    /**
+     * @Route("/imprint")
+     * @Template("HTWPhotoWebBundle:StaticPage:imprint.html.twig")
+     */
+    public function imprintAction() { return array(); }
 
     /**
      * @Route("/contact")
-     * @Method("GET")
-     * @Template("HTWPhotoWebBundle:StaticPage:general.html.twig", vars={"static_content"})
+     * @Template("HTWPhotoWebBundle:StaticPage:contact.html.twig")
      */
-    public function contactAction()
-    {
-    	$content = "Contact Page content";
-
-    	return array('static_content' => $content);
-    }
+    public function contactAction() { return array(); }
 }

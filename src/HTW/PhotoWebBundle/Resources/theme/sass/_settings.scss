@@ -1,7 +1,7 @@
 @import "foundation/functions";
 
 //body
-$body-bg: #565557;
+$body-bg: #efefeb; //#565557;
 $body-font-color: #fbfbfb;
 $body-font-family: 'Open Sans', sans-serif;
 $header-font-family: $body-font-family; //fixed
@@ -16,7 +16,7 @@ $header-font-family: $body-font-family; //fixed
 $header-font-color: #fbfbfb;
 
 //topbar
-$topbar-margin-bottom: 15px;
+$topbar-margin-bottom: 0px;
 $topbar-height: 60px;
 $topbar-bg: #efefeb;
 $topbar-link-font-size: rem-calc(16);
