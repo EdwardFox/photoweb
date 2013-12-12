@@ -1,0 +1,15 @@
+<div id="search-page" class="row">
+	{{ form_start(form) }}
+		{{ form_errors(form) }}
+		
+		<div class="col-md-1">
+			{{ form_errors(form.name) }}
+		</div>
+		<div class="col-md-2">
+			{{ form_widget(form.name) }}
+		</div>
+		<div class="col-md-9">
+			{{ form_widget(form.search) }}
+		</div>
+	{{ form_end(form) }}
+</div>

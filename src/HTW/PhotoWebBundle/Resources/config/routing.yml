@@ -21,3 +21,8 @@ myarea:
     resource: 	"@HTWPhotoWebBundle/Controller/MyAreaController.php"
     prefix: 	/myarea
     type:     	annotation
+
+search:
+    resource:   "@HTWPhotoWebBundle/Controller/SearchController.php"
+    prefix:     /search
+    type:       annotation
