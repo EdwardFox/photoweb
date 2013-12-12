@@ -44,9 +44,11 @@
     </div>
 
     <div id="main">
-        <div class="row">
-            <div class="large-12 columns">{% block content %}{% endblock content %}</div>
-        </div>
+        {% block wrapper %}
+            <div class="row">
+                <div class="large-12 columns">{% block content %}{% endblock content %}</div>   
+            </div>
+        {% endblock wrapper %}
     </div>
 
     <footer class="row">

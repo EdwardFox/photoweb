@@ -1,11 +1,20 @@
 {% extends 'HTWPhotoWebBundle::layout.html.twig' %}
 
-{% block content %}
-	<h2>Home</h2>
+{% set bodyclass = 'home' %}
+
+{% block wrapper %}
 	{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 	    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}<br />
 	    Index page for logged in users.
 	{% else %}
-		Index page for not logged in users.
+		<div class="row collapse">
+			<div class="small-6 columns">
+			 	<img width="100%" alt="" src="{{ asset('bundles/htwphotoweb/images/home_left.jpg') }}" >
+			</div>
+
+			<div class="small-6 columns">
+			 	<img width="100%" alt="" src="{{ asset('bundles/htwphotoweb/images/home_right.jpg') }}" >
+			</div>
+		</div>
 	{% endif %}
 {% endblock %}

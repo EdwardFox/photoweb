@@ -66,6 +66,11 @@
 	margin-bottom: 15px;
 	// @include box-shadow(#3b3a3c 0px 5px 10px);
 	// @include box-shadow(inset 0px -5px 10px #3b3a3c);
+
+
+	.home & {
+		padding:0;
+	}
 }
 
 footer {
