@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$(document).foundation();
 	
- 	$('.login-button, .register-button').magnificPopup({
+ 	$('.show-for-medium-up .login-button, .show-for-medium-up .register-button').magnificPopup({
 		type: 'ajax'
 	});
 

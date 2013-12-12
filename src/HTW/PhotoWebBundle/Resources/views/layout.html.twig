@@ -12,26 +12,40 @@
 
             <section class="top-bar-section">
                 <!-- Left Nav Section -->
-                <ul class="left">
+                <!-- <ul class="left">
                         <li{% if app.request.attributes.get('_route') == 'htw_photoweb_homepage' %} class="active"{% endif %}><a href="{{ path('htw_photoweb_homepage') }}">Home</a></li>
                         <li{% if app.request.attributes.get('_route') == 'htw_photoweb_user_list' %} class="active"{% endif %}><a href="{{ path('htw_photoweb_user_list') }}">Users</a></li>
                         <li{% if app.request.attributes.get('_route') == 'htw_photoweb_staticpage_about' %} class="active"{% endif %}><a href="{{ path('htw_photoweb_staticpage_about') }}">About</a></li>
                         <li{% if app.request.attributes.get('_route') == 'htw_photoweb_staticpage_contact' %} class="active"{% endif %}><a href="{{ path('htw_photoweb_staticpage_contact') }}">Contact</a></li>
-                </ul>
+                </ul> -->
 
                  <!-- Right Nav Section -->
-                <ul class="right">                    
+                <ul class="right show-for-small-only">                    
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                            <li{% if app.request.attributes.get('_route') == 'htw_photoweb_myarea_index' %} class="active"{% endif %}><a href="{{ path('htw_photoweb_myarea_index') }}">My area</a></li>
-                                <li>    
-                                    <a href="{{ path('fos_user_security_logout') }}">
-                                            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                                    </a>
-                                </li>
-                        {% else %}
-                                <li><a class="login-button" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></li>
-                                <li><a class="register-button" href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a></li>
-                        {% endif %}
+                        <li{% if app.request.attributes.get('_route') == 'htw_photoweb_myarea_index' %} class="active"{% endif %}><a href="{{ path('htw_photoweb_myarea_index') }}">My area</a></li>
+                        <li>    
+                            <a href="{{ path('fos_user_security_logout') }}">
+                                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                            </a>
+                        </li>
+                    {% else %}
+                        <li><a class="login-button" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></li>
+                        <li><a class="register-button" href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a></li>
+                    {% endif %}
+                </ul>
+
+                <ul class="right show-for-medium-up">                    
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <!-- <li{% if app.request.attributes.get('_route') == 'htw_photoweb_myarea_index' %} class="active"{% endif %}><a href="{{ path('htw_photoweb_myarea_index') }}">My area</a></li> -->
+                        <li class="has-form">    
+                            <a class="button radius logout-button" href="{{ path('fos_user_security_logout') }}">
+                                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="has-form"><a class="button radius login-button" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></li>
+                        <li class="has-form"><a class="button radius register-button" href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a></li>
+                    {% endif %}
                 </ul>
             </section>
         </nav>
@@ -46,12 +60,8 @@
         <hr>
 
         <div class="row">
-          <div class="large-6 columns">
-            <p>© Copyright no one at all. Go to town.</p>
-          </div>
-
-          <div class="large-6 columns">
-            <ul class="inline-list right">
+          <div class="small-6 columns">
+            <ul class="inline-list">
               <li>
                 <a href="#">Link 1</a>
               </li>
@@ -68,6 +78,10 @@
                 <a href="#">Link 4</a>
               </li>
             </ul>
+          </div>
+
+          <div class="small-6 columns">
+            <p class="text-right">© FOTOWEB 2013</p>
           </div>
         </div>
       </div>
