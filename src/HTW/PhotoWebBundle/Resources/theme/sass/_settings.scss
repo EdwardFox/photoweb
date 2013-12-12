@@ -8,8 +8,8 @@ $header-font-family: $body-font-family; //fixed
 
 
 //colors
-// $primary-color: #008CBA;
-// $secondary-color: #e7e7e7;
+$primary-color: #008CBA;
+$secondary-color: #e7e7e7;
 
 
 //headings
@@ -20,10 +20,14 @@ $topbar-margin-bottom: 0px;
 $topbar-height: 60px;
 $topbar-bg: #efefeb;
 $topbar-link-font-size: rem-calc(16);
-$topbar-menu-link-color: #292929 !default;
-$topbar-menu-icon-color: #292929 !default;
-$topbar-menu-link-color-toggled: #292929 !default;
-$topbar-menu-icon-color-toggled: #292929 !default;
+$topbar-menu-link-color: #292929;
+$topbar-menu-icon-color: #292929;
+$topbar-menu-link-color-toggled: #292929;
+$topbar-menu-icon-color-toggled: #292929;
+
+$topbar-link-color-hover: #efefeb;
+$topbar-link-color-active: #efefeb;
+$topbar-link-bg-hover: $primary-color;
 
 //forms
 $form-label-font-color: #fbfbfb;
