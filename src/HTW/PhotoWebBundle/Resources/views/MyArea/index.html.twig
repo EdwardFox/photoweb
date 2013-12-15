@@ -3,6 +3,12 @@
 {% block content %}
 	<h2>My Area</h2>
 	
+	{% for flashMessage in app.session.flashbag.get('notice') %}
+	    <div class="flash-notice">
+	        {{ flashMessage }}
+	    </div>
+	{% endfor %}
+
 	<div>
 		<a class="button tiny radius" href="{{ path('htw_photoweb_photo_upload') }}">Upload</a>
 	</div>

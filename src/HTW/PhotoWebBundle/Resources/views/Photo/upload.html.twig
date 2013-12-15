@@ -3,5 +3,11 @@
 {% block content %}
 	<h2>Photo upload</h2>
 
+	{% for flashMessage in app.session.flashbag.get('notice') %}
+	    <div class="flash-notice">
+	        {{ flashMessage }}
+	    </div>
+	{% endfor %}
+
 	{{ form(form) }}
 {% endblock %}
