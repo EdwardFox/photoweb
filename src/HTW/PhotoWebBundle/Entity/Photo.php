@@ -49,7 +49,10 @@ class Photo
 
     /**
      * @Assert\NotBlank
-     * @Assert\File(maxSize="6000000")
+     * @Assert\File(maxSize="6000000",
+     *              mimeTypes = {"image/png", "image/jpeg", "image/gif"},
+     *              mimeTypesMessage = "Please upload a valid image. Possible extensions are: jpeg, png, gif"
+     * )
      */
     private $file;
 
