@@ -1,11 +1,17 @@
 {% extends 'HTWPhotoWebBundle::layout.html.twig' %}
 
-{% set bodyclass = 'home' %}
+{% if not is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+	{% set bodyclass = 'home' %}
+{% endif %}
 
 {% block wrapper %}
 	{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-	    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}<br />
-	    Index page for logged in users.
+	    <div class="row">
+	    	<div class="small-12 columns">
+		    	{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}<br />
+		    	Index page for logged in users.
+	    	</div>
+	    </div>
 	{% else %}
 		<div class="row collapse">
 			<div class="small-6 columns">

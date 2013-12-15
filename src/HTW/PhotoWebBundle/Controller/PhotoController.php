@@ -34,11 +34,12 @@ class PhotoController extends Controller
 
 	    $form->handleRequest($request);
 
-		if ($form->isValid()) {
+    	if ($form->isValid()) {
 		    $em = $this->getDoctrine()->getManager();
 
 		    $em->persist($photo);
 		    $em->flush();
+
 
 		    $this->get('session')->getFlashBag()->add('notice', 'Your image was uploaded successfully'); 
 
@@ -50,6 +51,6 @@ class PhotoController extends Controller
 		    return $this->redirect($this->generateUrl('htw_photoweb_myarea_index'));
 		}
 
-	    return $this->render('HTWPhotoWebBundle:Photo:upload.html.twig', array('form' => $form->createView()));
+		return $this->render('HTWPhotoWebBundle:Photo:upload.html.twig', array('form' => $form->createView()));
     }
 }
