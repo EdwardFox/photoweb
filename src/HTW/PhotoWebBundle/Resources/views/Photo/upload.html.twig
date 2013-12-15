@@ -3,5 +3,5 @@
 {% block content %}
 	<h2>Photo upload</h2>
 
-	{{ form(form) }}
+	{{ form(form, {'attr': {'novalidate': 'novalidate'}}) }}
 {% endblock %}

@@ -1,4 +1,6 @@
 security:
+    hide_user_not_found:  false
+
     encoders:
         Symfony\Component\Security\Core\User\User: plaintext
         FOS\UserBundle\Model\UserInterface: sha512
@@ -20,6 +22,8 @@ security:
             form_login:
                 provider: fos_userbundle
                 csrf_provider: form.csrf_provider
+                failure_handler: htw_photo_web.login_failure_handler
+                success_handler: htw_photo_web.login_success_handler
             logout: true
             anonymous: true
 

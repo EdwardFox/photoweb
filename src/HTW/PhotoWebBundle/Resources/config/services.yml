@@ -1,7 +1,12 @@
 parameters:
-#    htw_photo_web.example.class: HTW\PhotoWebBundle\Example
+    htw_photo_web.login_success_handler.class: HTW\PhotoWebBundle\Component\Authentication\Handler\LoginSuccessHandler
+    htw_photo_web.login_failure_handler.class: HTW\PhotoWebBundle\Component\Authentication\Handler\LoginFailureHandler
 
 services:
-#    htw_photo_web.example:
-#        class: %htw_photo_web.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    htw_photo_web.login_success_handler:
+        class:  %htw_photo_web.login_success_handler.class%
+        parent: security.authentication.success_handler
+
+    htw_photo_web.login_failure_handler:
+        class:  %htw_photo_web.login_failure_handler.class%
+        parent: security.authentication.failure_handler

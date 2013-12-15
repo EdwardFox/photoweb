@@ -33,15 +33,15 @@ class PhotoController extends Controller
 
 	    $form->handleRequest($request);
 
-		if ($form->isValid()) {
+    	if ($form->isValid()) {
 		    $em = $this->getDoctrine()->getManager();
 
 		    $em->persist($photo);
 		    $em->flush();
 
 		    return $this->redirect($this->generateUrl('htw_photoweb_photo_upload'));
-		}
+	    }
 
-	    return $this->render('HTWPhotoWebBundle:Photo:upload.html.twig', array('form' => $form->createView()));
+		return $this->render('HTWPhotoWebBundle:Photo:upload.html.twig', array('form' => $form->createView()));
     }
 }

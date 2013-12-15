@@ -2,10 +2,12 @@
 
 {% block fos_user_content %}
 {% if error %}
-    <div>{{ error|trans({}, 'FOSUserBundle') }}</div>
+    <div data-alert class="alert-box radius">
+        {{ error|trans({}, 'FOSUserBundle') }}
+    </div>
 {% endif %}
 
-<form action="{{ path("fos_user_security_check") }}" method="post">
+<form class="login_form" action="{{ path("fos_user_security_check") }}" method="post">
     <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 
     <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
@@ -22,3 +24,20 @@
     <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" class="button tiny" />
 </form>
 {% endblock fos_user_content %}
+
+
+{% block javascripts %}
+    {% if app.request.xmlHttpRequest %}
+        <script>
+            $('.login_form').on('submit', function(e) {
+                e.preventDefault();
+
+                $.ajax({
+                    type: "POST",
+                    url: $(this).attr('action'),
+                    data: $(this).serialize()
+                });
+            });
+        </script>
+    {% endif %} 
+{% endblock %}

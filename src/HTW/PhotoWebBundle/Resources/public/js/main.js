@@ -2,7 +2,7 @@ $(document).ready(function() {
 	$(document).foundation();
 	
  	$('.show-for-medium-up .login-button, .show-for-medium-up .register-button').magnificPopup({
-		type: 'ajax'
+		type: 'ajax',
 	});
 
 	$('.popup-gallery').magnificPopup({
