@@ -4,10 +4,25 @@
 	<h2>Photo upload</h2>
 
 	{% for flashMessage in app.session.flashbag.get('notice') %}
-	    <div class="flash-notice">
+	    <div class="alert-box radius">
 	        {{ flashMessage }}
 	    </div>
 	{% endfor %}
 
-	{{ form(form) }}
+	{{ form_start(form) }}
+		{{ form_errors(form) }}
+
+		{{ form_row(form.name) }}
+		{{ form_row(form.description) }}
+		{{ form_row(form.file) }}
+
+		<div class="button-bar">
+			<ul class="button-group">
+				<li>{{ form_widget(form.save, {'attr': {'class': 'button radius'}}) }}</li>
+			</ul>
+			<ul class="button-group">
+				<li>{{ form_widget(form.saveAndAdd, {'attr': {'class': 'button radius'}}) }}</li>
+			</ul>
+		</div>
+	{{ form_end(form) }}
 {% endblock %}
