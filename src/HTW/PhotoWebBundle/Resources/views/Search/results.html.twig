@@ -8,9 +8,10 @@
 			{% for photo in pagination %}
 				<a class="th" href="{{ asset(photo.getWebPath()) }}" title="{{ photo.getName() }}"><img src="{{ photo.getWebPath() | imagine_filter('thumbnail') }}" alt="" /></a>
 			{% endfor %}
-			<div class="navigation">
-			    {{ knp_pagination_render(pagination) }}
-			</div>
+		</div>
+
+		<div class="navigation">
+		    {{ knp_pagination_render(pagination) }}
 		</div>
 	</div>
 {% endblock %}

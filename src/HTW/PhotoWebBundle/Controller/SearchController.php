@@ -68,7 +68,7 @@ class SearchController extends Controller
         $pagination = $paginator->paginate(
             $query,
             $this->get('request')->query->get('page', 1),
-            10
+            28
         );
 
         return $this->render('HTWPhotoWebBundle:Search:results.html.twig', array('pagination' => $pagination));

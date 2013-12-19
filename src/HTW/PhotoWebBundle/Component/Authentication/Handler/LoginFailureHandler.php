@@ -13,17 +13,16 @@ use Symfony\Component\Security\Http\HttpUtils;
 class LoginFailureHandler extends DefaultAuthenticationFailureHandler
 {
 	
-	public function onAuthenticationFailure(Request $request, AuthenticationException $exception)
-            {
-                        if ($request->isXmlHttpRequest()) {
-                                $json = array(
-                                        'has_error'        => true,
-                                        'error'     => $exception->getMessage()
-                                );
+	public function onAuthenticationFailure(Request $request, AuthenticationException $exception) {
+        if ($request->isXmlHttpRequest()) {
+            $json = array(
+                'error' => true,
+                'message' => $exception->getMessage()
+            );
 
-                                return new Response(json_encode($json));
-                        }
+            return new Response(json_encode($json));
+        }
 
-                        return parent::onAuthenticationFailure($request, $exception);
-            }
+        return parent::onAuthenticationFailure($request, $exception);
+    }
 }

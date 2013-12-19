@@ -13,19 +13,16 @@ use Symfony\Component\Routing\Router;
 class LoginSuccessHandler extends DefaultAuthenticationSuccessHandler
 {
 	
-	public function onAuthenticationSuccess(Request $request, TokenInterface $token)
-	{
+	public function onAuthenticationSuccess(Request $request, TokenInterface $token) {
 		
 		if ($request->isXmlHttpRequest()) {
-                $json = array(
-                        'has_error' => false,
-                        'username' => $token->getUser()->getUsername(),
-                        'target_path' => $this->determineTargetUrl($request)
-                );
+			$json = array(
+				'error' => false,
+			);
 
-                return new Response(json_encode($json));
-        }
+			return new Response(json_encode($json));
+		}
 
-        return parent::onAuthenticationSuccess($request, $token);
+		return parent::onAuthenticationSuccess($request, $token);
 	}
 }

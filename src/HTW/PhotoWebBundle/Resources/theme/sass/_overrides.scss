@@ -1,11 +1,13 @@
 @import "compass/css3";
 
 .ajax-popup {
-	background: #fff;
+	background: #eff0eb;
 	padding:20px;
 	position: relative;
-	max-width:600px; 
+	max-width:340px; 
 	margin: 20px auto;
+
+	@include border-radius(10px);
 
 	label {
 		color: #565557;
@@ -72,12 +74,32 @@
 	background: #565557;
 	padding: 15px 0 20px;
 	margin-bottom: 15px;
-	// @include box-shadow(#3b3a3c 0px 5px 10px);
-	// @include box-shadow(inset 0px -5px 10px #3b3a3c);
-
 
 	.home & {
 		padding:0;
+	}
+}
+
+.home-side-big {
+	position: relative;
+
+	& > img {
+		width:100%;
+	}
+
+	.home-block {
+		left:0;
+		right:0;
+		position: absolute;
+		top:30%;
+		padding:3% 10%;
+		background: rgba(0,0,0,0.6);
+		min-height: 30%;
+
+		h4 {
+			text-transform: uppercase;
+			font-weight: bold;
+		}
 	}
 }
 
