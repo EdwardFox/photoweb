@@ -3,28 +3,63 @@
 {% set bodyclass = 'home' %}
 
 {% block wrapper %}
-	<div class="row collapse">
-		<div class="medium-6 columns home-side-big">
-		 	<img alt="" src="{{ asset('bundles/htwphotoweb/images/home_left.jpg') }}" >
-		 	<div class="home-block">
-		 		<h4>Fotos entdecken</h4>
-		 		<p>Wenn du auf der Suche nach frischen Motiven bist, ist FOTOWEB genau die richtige Adresse.</p>
+	<div class="show-for-medium-up home-wrapper">
+		<div class="row collapse">
+			<div class="medium-6 columns home-side-big">
+			 	<img alt="" src="{{ asset('bundles/htwphotoweb/images/home_left.jpg') }}" >
+			</div>
 
-		 		<form action="{{ path('htw_photoweb_search_results') }}" method="GET">
-		 			<div><input type="text" name="name" class="radius"></div>
-		 			<div><input type="submit" name="submit" class="button tiny radius"></div>
-		 		</form>
-		 	</div>
+			<div class="medium-6 columns home-side-big">
+			 	<img alt="" src="{{ asset('bundles/htwphotoweb/images/home_right.jpg') }}" >
+			</div>
 		</div>
 
-		<div class="medium-6 columns home-side-big">
-		 	<img alt="" src="{{ asset('bundles/htwphotoweb/images/home_right.jpg') }}" >
-			<div class="home-block">
-		 		<h4>Fotos teilen</h4>
-		 		<p>Teile deine Fotos mit der Welt. Dabei behälst du die volle Kontrolle über deine Bildrechte.</p>
+		<div class="row home-content-wrapper">
+			<div class="medium-12 columns">
+				<div class="row">
+					<div class="medium-6 columns home-block">
+				 		<h4>Fotos entdecken</h4>
+				 		<p>Wenn du auf der Suche nach frischen Motiven bist, ist FOTOWEB genau die richtige Adresse.</p>
 
-		 		<a class="button small radius" href="{{ path('htw_photoweb_photo_upload') }}">Jetzt Fotos hochladen</a>
-		 	</div>
+				 		<form action="{{ path('htw_photoweb_search_results') }}" method="GET">
+				 			<div><input type="text" name="name" class="radius"></div>
+				 			<div><input type="submit" name="submit" class="button tiny radius"></div>
+				 		</form>
+				 	</div>
+
+				 	<div class="medium-6 columns home-block">
+				 		<h4>Fotos teilen</h4>
+				 		<p>Teile deine Fotos mit der Welt. Dabei behälst du die volle Kontrolle über deine Bildrechte.</p>
+
+				 		<a class="button small radius" href="{{ path('htw_photoweb_photo_upload') }}">Jetzt Fotos hochladen</a>
+				 	</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="show-for-small-only home-wrapper">
+		<div class="row collapse">
+			<div class="small-12 columns small-side-left">
+			 	<div class="medium-6 columns home-block">
+			 		<h4>Fotos entdecken</h4>
+			 		<p>Wenn du auf der Suche nach frischen Motiven bist, ist FOTOWEB genau die richtige Adresse.</p>
+
+			 		<form action="{{ path('htw_photoweb_search_results') }}" method="GET">
+			 			<div><input type="text" name="name" class="radius"></div>
+			 			<div><input type="submit" name="submit" class="button tiny radius"></div>
+			 		</form>
+			 	</div>
+			</div>
+
+			<div class="small-12 columns small-side-right">
+			 	<div class="medium-6 columns home-block">
+			 		<h4>Fotos teilen</h4>
+			 		<p>Teile deine Fotos mit der Welt. Dabei behälst du die volle Kontrolle über deine Bildrechte.</p>
+
+			 		<a class="button small radius" href="{{ path('htw_photoweb_photo_upload') }}">Jetzt Fotos hochladen</a>
+			 	</div>
+			</div>
 		</div>
 	</div>
 {% endblock %}
