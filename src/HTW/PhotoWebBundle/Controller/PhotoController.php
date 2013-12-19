@@ -28,7 +28,8 @@ class PhotoController extends Controller
 	        ->add('name')
 	        ->add('description')
 	        ->add('file')
-	        ->add('save', 'submit')
+	        ->add('save', 'submit', array('attr'=> array('class'=>'test')))
+	        ->add('saveAndAdd', 'submit')
 	        ->getForm();
 
 	    $form->handleRequest($request);
@@ -39,8 +40,16 @@ class PhotoController extends Controller
 		    $em->persist($photo);
 		    $em->flush();
 
-		    return $this->redirect($this->generateUrl('htw_photoweb_photo_upload'));
-	    }
+
+		    $this->get('session')->getFlashBag()->add('notice', 'Your image was uploaded successfully'); 
+
+		    // Stay on the upload page if second button is clicked
+		    if($form->get('saveAndAdd')->isClicked()) {
+		    	return $this->redirect($this->generateUrl('htw_photoweb_photo_upload'));
+		    }
+
+		    return $this->redirect($this->generateUrl('htw_photoweb_myarea_index'));
+		}
 
 		return $this->render('HTWPhotoWebBundle:Photo:upload.html.twig', array('form' => $form->createView()));
     }

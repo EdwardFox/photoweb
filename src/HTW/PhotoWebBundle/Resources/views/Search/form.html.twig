@@ -1,15 +1,12 @@
 <div id="search-page" class="row">
 	{{ form_start(form) }}
 		{{ form_errors(form) }}
-		
-		<div class="col-md-1">
-			{{ form_errors(form.name) }}
-		</div>
-		<div class="col-md-2">
+
+		<div class="large-10 columns">
 			{{ form_widget(form.name) }}
 		</div>
-		<div class="col-md-9">
-			{{ form_widget(form.search) }}
+		<div class="large-2 columns">
+			{{ form_widget(form.search, {'attr': {'class': 'tiny'}}) }}
 		</div>
 	{{ form_end(form) }}
 </div>

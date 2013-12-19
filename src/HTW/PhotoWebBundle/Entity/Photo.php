@@ -33,7 +33,7 @@ class Photo
     public $path;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      */
     public $description;
 
@@ -49,7 +49,10 @@ class Photo
 
     /**
      * @Assert\NotBlank
-     * @Assert\File(maxSize="6000000")
+     * @Assert\Image(maxSize="6000000",
+     *              mimeTypes = {"image/png", "image/jpeg", "image/gif"},
+     *              mimeTypesMessage = "Please upload a valid image. Possible extensions are: jpeg, png, gif"
+     * )
      */
     private $file;
 
