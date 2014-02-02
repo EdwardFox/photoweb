@@ -66,7 +66,8 @@ class StaticPageController extends Controller
 
             $message = \Swift_Message::newInstance()
                 ->setSubject('Neue Nachricht von '. $data['name'] .' über Fotoweb!')
-                ->setFrom($data['email'])
+                ->setFrom(array('photoweb@delphinus.uberspace.de' => 'FotoWeb'))
+                ->setReplyTo(array($data['email'] => $data['name']))
                 ->setTo('patrick.jean.bauer@googlemail.com')
                 ->setBody($data['message']);
             $this->get('mailer')->send($message);
