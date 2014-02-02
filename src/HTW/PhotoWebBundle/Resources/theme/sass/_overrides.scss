@@ -48,10 +48,12 @@
 			padding:0 0 0 10px;
 		}
 
-		.left {
-			li {
-				a {
-					color: #292929;
+		li {
+			a {
+				color: #292929;
+
+				&.button {
+					color: #fbfbfb;
 				}
 			}
 		}
@@ -110,6 +112,7 @@
 .small-side-left, .small-side-right {
 	padding:30px 0px;
 	background-image: url(../images/home_left.jpg);
+	background-size: cover;
 	background-position: 0px 35%;
 
 	.home-block {

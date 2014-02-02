@@ -1,7 +1,9 @@
 {% extends 'HTWPhotoWebBundle::layout.html.twig' %}
 
+{% set page_title = 'Meine Fotos' %}
+
 {% block content %}
-	<h2>My Area</h2>
+	<h2>Meine Fotos</h2>
 	
 	{% for flashMessage in app.session.flashbag.get('notice') %}
 	    <div class="alert-box radius">
@@ -10,7 +12,8 @@
 	{% endfor %}
 
 	<div>
-		<a class="button tiny radius" href="{{ path('htw_photoweb_photo_upload') }}">Upload</a>
+		<a class="button tiny radius" href="{{ path('htw_photoweb_photo_upload') }}">Neues Foto hochladen</a>
+		<a class="button tiny radius" href="{{ path('htw_photoweb_photo_export') }}">Fotos exportieren</a>
 	</div>
 
 	<div class="popup-gallery">
