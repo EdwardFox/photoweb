@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<photos>
+    {% for photo in photos %}
+        <photo id="{{ photo.id }}">
+            <name>{{ photo.name }}</name>
+            <description>{{ photo.description }}</description>
+            <path>{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset(photo.webpath) }}</path>
+        </photo>
+    {% endfor %}
+</photos>

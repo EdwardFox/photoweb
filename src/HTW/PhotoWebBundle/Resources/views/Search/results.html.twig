@@ -1,5 +1,7 @@
 {% extends 'HTWPhotoWebBundle::layout.html.twig' %}
 
+{% set page_title = 'Suchergebnisse' %}
+
 {% block content %}
 	<div class="content">
 		{{ render(controller('HTWPhotoWebBundle:Search:form', {'originalRequest': app.request})) }}

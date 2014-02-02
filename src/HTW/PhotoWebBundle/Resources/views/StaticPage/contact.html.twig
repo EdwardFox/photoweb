@@ -1,5 +1,7 @@
 {% extends 'HTWPhotoWebBundle::layout.html.twig' %}
 
+{% set page_title = 'Kontakt' %}
+
 {% block content %}
 	{% for flashMessage in app.session.flashbag.get('success') %}
 	    <div class="alert-box success radius">

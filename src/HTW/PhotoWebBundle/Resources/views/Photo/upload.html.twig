@@ -1,7 +1,9 @@
 {% extends 'HTWPhotoWebBundle::layout.html.twig' %}
 
+{% set page_title = 'Foto hochladen' %}
+
 {% block content %}
-	<h2>Photo upload</h2>
+	<h2>Foto hochladen</h2>
 
 	{% for flashMessage in app.session.flashbag.get('notice') %}
 	    <div class="alert-box radius">
@@ -18,10 +20,10 @@
 
 		<div class="button-bar">
 			<ul class="button-group">
-				<li>{{ form_widget(form.save, {'attr': {'class': 'button radius'}}) }}</li>
+				<li>{{ form_widget(form.save, {'attr': {'class': 'button small radius'}}) }}</li>
 			</ul>
 			<ul class="button-group">
-				<li>{{ form_widget(form.saveAndAdd, {'attr': {'class': 'button radius'}}) }}</li>
+				<li>{{ form_widget(form.saveAndAdd, {'attr': {'class': 'button small radius'}}) }}</li>
 			</ul>
 		</div>
 	{{ form_end(form) }}
