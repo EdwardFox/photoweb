@@ -88,20 +88,22 @@ class SearchController extends Controller
     public function resultsAction(Request $request)
     {
         $name = $request->query->get('name');
-        $format = !empty($request->query->get('format')) ? $request->query->get('format') : '%';
-        $color = !empty($request->query->get('color')) ? $request->query->get('color') : '%';
-        $width = !empty($request->query->get('width')) ? $request->query->get('width') : '%';
-        $height = !empty($request->query->get('height')) ? $request->query->get('height') : '%';
+        $format = $request->query->get('format') ? $request->query->get('format') : '%';
+        $color = $request->query->get('color') ? $request->query->get('color') : '%';
+        $width = $request->query->get('width') ? $request->query->get('width') : '%';
+        $height = $request->query->get('height') ? $request->query->get('height') : '%';
+
+        print $format;
         
         $repository = $this->getDoctrine()
             ->getRepository('HTWPhotoWebBundle:Photo');
 
         $query = $repository->createQueryBuilder('p')
             ->where('LOWER(p.name) LIKE LOWER(:name)')
-            ->andWhere('p.format LIKE :format')
-            ->andWhere('p.color LIKE :color')
-            ->andWhere('p.width LIKE :width')
-            ->andWhere('p.height LIKE :height')
+            ->andWhere('p.format LIKE :format OR p.format IS NULL')
+            ->andWhere('p.color LIKE :color OR p.color IS NULL')
+            ->andWhere('p.width LIKE :width OR p.width IS NULL')
+            ->andWhere('p.height LIKE :height OR p.height IS NULL')
             ->setParameter('name', '%'.$name.'%')
             ->setParameter('format', '%'.$format.'%')
             ->setParameter('color', '%'.$color.'%')
