@@ -60,12 +60,12 @@ class Photo
     /**
      * @ORM\Column(type="integer")
      */
-    public $dimX;
+    public $width;
 
     /**
      * @ORM\Column(type="integer")
      */
-    public $dimY;
+    public $height;
 
     /**
      * @Assert\NotBlank
@@ -361,48 +361,48 @@ class Photo
     }
 
     /**
-     * Set dimX
+     * Set width
      *
-     * @param integer $dimX
+     * @param integer $width
      * @return Photo
      */
-    public function setDimX($dimX)
+    public function setWidth($width)
     {
-        $this->dimX = $dimX;
+        $this->width = $width;
     
         return $this;
     }
 
     /**
-     * Get dimX
+     * Get width
      *
      * @return integer 
      */
-    public function getDimX()
+    public function getWidth()
     {
-        return $this->dimX;
+        return $this->width;
     }
 
     /**
-     * Set dimY
+     * Set height
      *
-     * @param integer $dimY
+     * @param integer $height
      * @return Photo
      */
-    public function setDimY($dimY)
+    public function setHeight($height)
     {
-        $this->dimY = $dimY;
+        $this->height = $height;
     
         return $this;
     }
 
     /**
-     * Get dimY
+     * Get height
      *
      * @return integer 
      */
-    public function getDimY()
+    public function getHeight()
     {
-        return $this->dimY;
+        return $this->height;
     }
 }

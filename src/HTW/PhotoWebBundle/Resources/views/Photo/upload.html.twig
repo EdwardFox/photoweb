@@ -17,6 +17,17 @@
 		{{ form_row(form.file) }}
 
         <h3>Metadata</h3>
+		{{ form_row(form.format) }}
+		{{ form_row(form.color) }}
+
+        <div class="row">
+            <div class="small-6 medium-6 large-6 columns">
+                {{ form_row(form.width) }}
+            </div>
+            <div class="small-6 medium-6 large-6 columns">
+                {{ form_row(form.height) }}
+            </div>
+        </div>
 
 		<div class="button-bar">
 			<ul class="button-group">

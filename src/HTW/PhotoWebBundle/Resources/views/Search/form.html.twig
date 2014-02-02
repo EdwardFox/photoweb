@@ -1,12 +1,18 @@
-<div id="search-page" class="row">
+<div id="search-page">
 	{{ form_start(form) }}
 		{{ form_errors(form) }}
+        {{ form_row(form.name) }}
+        {{ form_row(form.format) }}
+        {{ form_row(form.color) }}
+        <div class="row">
+            <div class="small-6 medium-6 large-6 columns">
+                {{ form_row(form.width) }}
+            </div>
+            <div class="small-6 medium-6 large-6 columns">
+                {{ form_row(form.height) }}
+            </div>
+        </div>
 
-		<div class="large-10 columns">
-			{{ form_widget(form.name) }}
-		</div>
-		<div class="large-2 columns">
-			{{ form_widget(form.search, {'attr': {'class': 'tiny'}}) }}
-		</div>
+        {{ form_row(form.search, {'attr': {'class': 'tiny'}}) }}
 	{{ form_end(form) }}
 </div>

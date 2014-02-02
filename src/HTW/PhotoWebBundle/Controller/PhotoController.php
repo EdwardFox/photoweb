@@ -25,15 +25,34 @@ class PhotoController extends Controller
     	$user = $this->getUser()->getId();
 	    $photo = new Photo($user);
 	    $form = $this->createFormBuilder($photo)
-	        ->add('name')
-	        ->add('description')
-	        ->add('file')
-            ->add('format')
-            ->add('color')
-            ->add('dimX')
-            ->add('dimY')
-	        ->add('save', 'submit', array('attr'=> array('class'=>'test')))
-	        ->add('saveAndAdd', 'submit')
+	        ->add('name', 'text')
+	        ->add('description', null, array('label' => 'Beschreibung'))
+	        ->add('file', null, array('label' => 'Datei'))
+            ->add('format', 'choice', array(
+                'choices' => array(
+                    1 => 'Quadratisch',
+                    2 => 'Hochformat',
+                    3 => 'Querformat',
+                    4 => 'Panorama'
+                ),
+                'required' => false,
+                'empty_value' => 'Wähle das Format',
+                'empty_data' => null,
+            ))
+            ->add('color', 'choice', array(
+                'choices' => array(
+                    '1' => 'Farbe',
+                    '2' => 'Schwarzweiß',
+                ),
+                'label' => 'Farbe',
+                'empty_value' => 'Alle',
+                'empty_data' => null,
+                'required' => false,
+            ))
+            ->add('width', 'text', array('label' => 'Breite'))
+            ->add('height', 'text', array('label' => 'Höhe'))
+	        ->add('save', 'submit', array('attr'=> array('class'=>'test'), 'label' => 'Speichern'))
+	        ->add('saveAndAdd', 'submit', array('label' => 'Speichern und Hinzufügen'))
 	        ->getForm();
 
 	    $form->handleRequest($request);
