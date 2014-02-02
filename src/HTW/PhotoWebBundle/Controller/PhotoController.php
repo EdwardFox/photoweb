@@ -28,6 +28,10 @@ class PhotoController extends Controller
 	        ->add('name')
 	        ->add('description')
 	        ->add('file')
+            ->add('format')
+            ->add('color')
+            ->add('dimX')
+            ->add('dimY')
 	        ->add('save', 'submit', array('attr'=> array('class'=>'test')))
 	        ->add('saveAndAdd', 'submit')
 	        ->getForm();

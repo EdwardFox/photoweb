@@ -19,7 +19,8 @@ class SearchController extends Controller
      */
     public function searchAction()
     {
-        return $this->render('HTWPhotoWebBundle:Search:search.html.twig');  
+        $pagination = array();
+        return $this->render('HTWPhotoWebBundle:Search:search.html.twig', array('pagination' => $pagination));  
     }
 
     /**

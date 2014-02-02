@@ -48,6 +48,26 @@ class Photo
     public $album;
 
     /**
+     * @ORM\Column(type="integer")
+     */
+    public $format;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    public $color;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    public $dimX;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    public $dimY;
+
+    /**
      * @Assert\NotBlank
      * @Assert\Image(maxSize="6000000",
      *              mimeTypes = {"image/png", "image/jpeg", "image/gif"},
@@ -292,5 +312,97 @@ class Photo
     public function getAlbum()
     {
         return $this->album;
+    }
+
+    /**
+     * Set format
+     *
+     * @param integer $format
+     * @return Photo
+     */
+    public function setFormat($format)
+    {
+        $this->format = $format;
+    
+        return $this;
+    }
+
+    /**
+     * Get format
+     *
+     * @return integer 
+     */
+    public function getFormat()
+    {
+        return $this->format;
+    }
+
+    /**
+     * Set color
+     *
+     * @param integer $color
+     * @return Photo
+     */
+    public function setColor($color)
+    {
+        $this->color = $color;
+    
+        return $this;
+    }
+
+    /**
+     * Get color
+     *
+     * @return integer 
+     */
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    /**
+     * Set dimX
+     *
+     * @param integer $dimX
+     * @return Photo
+     */
+    public function setDimX($dimX)
+    {
+        $this->dimX = $dimX;
+    
+        return $this;
+    }
+
+    /**
+     * Get dimX
+     *
+     * @return integer 
+     */
+    public function getDimX()
+    {
+        return $this->dimX;
+    }
+
+    /**
+     * Set dimY
+     *
+     * @param integer $dimY
+     * @return Photo
+     */
+    public function setDimY($dimY)
+    {
+        $this->dimY = $dimY;
+    
+        return $this;
+    }
+
+    /**
+     * Get dimY
+     *
+     * @return integer 
+     */
+    public function getDimY()
+    {
+        return $this->dimY;
     }
 }
