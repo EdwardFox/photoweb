@@ -60,8 +60,8 @@ class SearchController extends Controller
                 'empty_data' => null,
                 'required' => false,
             ))
-            ->add('width', 'text', array('label' => 'Breite', 'required' => false))
-            ->add('height', 'text', array('label' => 'Höhe', 'required' => false))
+            ->add('width', 'text', array('label' => 'Breite in px', 'required' => false))
+            ->add('height', 'text', array('label' => 'Höhe in px', 'required' => false))
             ->add('search', 'submit', array('label' => 'Suchen'))
             ->getForm();
 
