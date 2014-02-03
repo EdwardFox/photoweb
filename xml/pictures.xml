@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<?xml version="1.0" encoding="ISO-8859-1"?>-->
+<?xml-stylesheet type="text/xsl" href="picture.xsl" ?>
+<pictures>
+    <title>Bilder Photoweb</title>
+      <picture id="1">
+        <name>bild1.png</name>
+        <size>small</size>
+        <direction>hochformat</direction>
+        <color>red</color>
+    </picture>
+    <picture id="2">
+        <name>bild2.png</name>
+        <size>medium</size>
+        <direction>hochformat</direction>
+        <color>yellow</color>
+    </picture>
+    <picture id="3">
+        <name>bild3.png</name>
+        <size>small</size>
+        <direction>querformat</direction>
+        <color>green</color>
+    </picture>
+    <picture id="4">
+        <name>bild4.png</name>
+        <size>large</size>
+        <direction>querformat</direction>
+        <color>yellow</color>
+    </picture>
+    <picture id="5">
+        <name>bild5.png</name>
+        <size>medium</size>
+        <direction>querformat</direction>
+        <color>white</color>
+    </picture>
+</pictures>
