@@ -1,13 +1,29 @@
 {% extends 'HTWPhotoWebBundle::layout.html.twig' %}
 
+{% set page_title = 'Kontakt' %}
+
 {% block content %}
+	{% for flashMessage in app.session.flashbag.get('success') %}
+	    <div class="alert-box success radius">
+	        {{ flashMessage }}
+	    </div>
+	{% endfor %}
+
 	<h2>Kontakt</h2>
 	
-	<p class="text-justify">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+	<p class="text-justify">Sie möchten uns eine Nachricht senden? Schicken Sie uns einfach eine Nachricht über das folgende Kontaktformular. Nach der Bearbeitung Ihrer Anfrage werden wir uns schnellsmöglich bei Ihnen melden.</p>
 
-	<p class="text-justify">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+	<div>
+		{{ form_start(form) }}
+		    {{ form_errors(form) }}
 
-	<p class="text-justify">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+		    {{ form_row(form.name) }}
+		    {{ form_row(form.email) }}
+		    {{ form_row(form.message) }}
 
-	<p class="text-justify">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+		    {{ form_row(form.send, {'attr': {'class': 'small radius'}}) }}
+		{{ form_end(form) }}
+	</div>
+
+	
 {% endblock %}

@@ -48,6 +48,26 @@ class Photo
     public $album;
 
     /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    public $format;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    public $color;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    public $width;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    public $height;
+
+    /**
      * @Assert\NotBlank
      * @Assert\Image(maxSize="6000000",
      *              mimeTypes = {"image/png", "image/jpeg", "image/gif"},
@@ -292,5 +312,97 @@ class Photo
     public function getAlbum()
     {
         return $this->album;
+    }
+
+    /**
+     * Set format
+     *
+     * @param integer $format
+     * @return Photo
+     */
+    public function setFormat($format)
+    {
+        $this->format = $format;
+    
+        return $this;
+    }
+
+    /**
+     * Get format
+     *
+     * @return integer 
+     */
+    public function getFormat()
+    {
+        return $this->format;
+    }
+
+    /**
+     * Set color
+     *
+     * @param integer $color
+     * @return Photo
+     */
+    public function setColor($color)
+    {
+        $this->color = $color;
+    
+        return $this;
+    }
+
+    /**
+     * Get color
+     *
+     * @return integer 
+     */
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    /**
+     * Set width
+     *
+     * @param integer $width
+     * @return Photo
+     */
+    public function setWidth($width)
+    {
+        $this->width = $width;
+    
+        return $this;
+    }
+
+    /**
+     * Get width
+     *
+     * @return integer 
+     */
+    public function getWidth()
+    {
+        return $this->width;
+    }
+
+    /**
+     * Set height
+     *
+     * @param integer $height
+     * @return Photo
+     */
+    public function setHeight($height)
+    {
+        $this->height = $height;
+    
+        return $this;
+    }
+
+    /**
+     * Get height
+     *
+     * @return integer 
+     */
+    public function getHeight()
+    {
+        return $this->height;
     }
 }

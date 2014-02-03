@@ -20,6 +20,7 @@ $topbar-margin-bottom: 0px;
 $topbar-height: 60px;
 $topbar-bg: #efefeb;
 $topbar-link-font-size: rem-calc(16);
+
 $topbar-menu-link-color: #292929;
 $topbar-menu-icon-color: #292929;
 $topbar-menu-link-color-toggled: #292929;
@@ -28,6 +29,10 @@ $topbar-menu-icon-color-toggled: #292929;
 $topbar-link-color-hover: #efefeb;
 $topbar-link-color-active: #efefeb;
 $topbar-link-bg-hover: $primary-color;
+
+$topbar-dropdown-bg: #efefeb;
+$topbar-dropdown-link-color: #292929;
+$topbar-dropdown-link-bg: #efefeb;
 
 //forms
 $form-label-font-color: #fbfbfb;

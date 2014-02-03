@@ -13,13 +13,13 @@
             <section class="top-bar-section">
                  <!-- Left Nav Section -->
                 <ul class="left">                    
-                    <li{% if app.request.attributes.get('_route') == 'htw_photoweb_search_search' %} class="active"{% endif %}><a href="{{ path('htw_photoweb_search_search') }}">Search</a></li>
+                    <li{% if app.request.attributes.get('_route') == 'htw_photoweb_search_search' %} class="active"{% endif %}><a href="{{ path('htw_photoweb_search_search') }}">Suche</a></li>
                 </ul>
 
                  <!-- Right Nav Section -->
                 <ul class="right show-for-small-only">                    
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                        <li{% if app.request.attributes.get('_route') == 'htw_photoweb_myarea_index' %} class="active"{% endif %}><a href="{{ path('htw_photoweb_myarea_index') }}">My area</a></li>
+                        <li{% if app.request.attributes.get('_route') == 'htw_photoweb_myarea_index' %} class="active"{% endif %}><a href="{{ path('htw_photoweb_myarea_index') }}">Meine Fotos</a></li>
                         <li>    
                             <a href="{{ path('fos_user_security_logout') }}">
                                     {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
@@ -33,7 +33,7 @@
 
                 <ul class="right show-for-medium-up">                    
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                        <li class="has-form{% if app.request.attributes.get('_route') == 'htw_photoweb_myarea_index' %} active{% endif %}"><a class="button radius" href="{{ path('htw_photoweb_myarea_index') }}">My area</a></li>
+                        <li class="has-form{% if app.request.attributes.get('_route') == 'htw_photoweb_myarea_index' %} active{% endif %}"><a class="button radius" href="{{ path('htw_photoweb_myarea_index') }}">Meine Fotos</a></li>
                         <li class="has-form">    
                             <a class="button radius logout-button" href="{{ path('fos_user_security_logout') }}">
                                     {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}

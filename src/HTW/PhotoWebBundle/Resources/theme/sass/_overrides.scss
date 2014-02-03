@@ -21,6 +21,7 @@
 .contain-to-grid {
 	@include box-shadow(#3b3a3c 0px 5px 10px);
 	position: relative;
+    z-index: 100;
 }
 
 
@@ -47,10 +48,12 @@
 			padding:0 0 0 10px;
 		}
 
-		.left {
-			li {
-				a {
-					color: #292929;
+		li {
+			a {
+				color: #292929;
+
+				&.button {
+					color: #fbfbfb;
 				}
 			}
 		}
@@ -75,7 +78,7 @@
 	padding: 15px 0 20px;
 	margin-bottom: 15px;
 
-	.home & {
+	.home &, .search & {
 		padding:0;
 	}
 }
@@ -109,6 +112,7 @@
 .small-side-left, .small-side-right {
 	padding:30px 0px;
 	background-image: url(../images/home_left.jpg);
+	background-size: cover;
 	background-position: 0px 35%;
 
 	.home-block {
@@ -124,4 +128,27 @@
 
 footer {
 	color:#565557;
+}
+
+.searchbar {
+    padding-top: 20px;
+    background: #565457;
+    border-right: 1px solid #a0a0a0;
+}
+
+.contentbar {
+    background-color: #292929;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.searchrow {
+    display: flex;
+}
+
+.popup-gallery {
+    .th {
+        margin-right: 10px;
+        margin-bottom: 15px;
+    }
 }
