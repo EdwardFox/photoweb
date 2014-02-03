@@ -88,10 +88,10 @@ class SearchController extends Controller
     public function resultsAction(Request $request)
     {
         $name = $request->query->get('name');
-        $format = !empty($request->query->get('format')) ? $request->query->get('format') : '%';
-        $color = !empty($request->query->get('color')) ? $request->query->get('color') : '%';
-        $width = !empty($request->query->get('width')) ? $request->query->get('width') : '%';
-        $height = !empty($request->query->get('height')) ? $request->query->get('height') : '%';
+        $format = $request->query->get('format') ? $request->query->get('format') : '%';
+        $color = $request->query->get('color') ? $request->query->get('color') : '%';
+        $width = $request->query->get('width') ? $request->query->get('width') : '%';
+        $height = $request->query->get('height') ? $request->query->get('height') : '%';
         
         $repository = $this->getDoctrine()
             ->getRepository('HTWPhotoWebBundle:Photo');
