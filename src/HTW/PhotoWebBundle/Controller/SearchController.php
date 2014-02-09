@@ -108,6 +108,7 @@ class SearchController extends Controller
             ->setParameter('color', '%'.$color.'%')
             ->setParameter('width', '%'.$width.'%')
             ->setParameter('height', '%'.$height.'%')
+            ->orderBy('p.id', 'DESC')
             ->getQuery();
 
         $paginator  = $this->get('knp_paginator');

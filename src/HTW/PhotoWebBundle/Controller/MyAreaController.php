@@ -30,6 +30,7 @@ class MyAreaController extends Controller
         $query = $repository->createQueryBuilder('p')
                             ->where('p.user = :userID')
                             ->setParameter('userID', $userID)
+                            ->orderBy('p.id', 'DESC')
                             ->getQuery();
 
         //return array('photos' => $query->getResult());
