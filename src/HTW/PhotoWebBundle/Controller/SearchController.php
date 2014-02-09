@@ -97,12 +97,13 @@ class SearchController extends Controller
             ->getRepository('HTWPhotoWebBundle:Photo');
 
         $query = $repository->createQueryBuilder('p')
-            ->where('LOWER(p.name) LIKE LOWER(:name)')
+            ->where('LOWER(p.name) LIKE LOWER(:name) OR LOWER(p.description) LIKE LOWER(:desc)')
             ->andWhere('p.format LIKE :format OR p.format IS NULL')
             ->andWhere('p.color LIKE :color OR p.color IS NULL')
             ->andWhere('p.width LIKE :width OR p.width IS NULL')
             ->andWhere('p.height LIKE :height OR p.height IS NULL')
             ->setParameter('name', '%'.$name.'%')
+            ->setParameter('desc', '%'.$name.'%')
             ->setParameter('format', '%'.$format.'%')
             ->setParameter('color', '%'.$color.'%')
             ->setParameter('width', '%'.$width.'%')
