@@ -34,10 +34,7 @@ class PhotoController extends Controller
                     2 => 'Hochformat',
                     3 => 'Querformat',
                     4 => 'Panorama'
-                ),
-                'required' => false,
-                'empty_value' => 'Wähle das Format',
-                'empty_data' => null,
+                )
             ))
             ->add('color', 'choice', array(
                 'choices' => array(
@@ -45,9 +42,6 @@ class PhotoController extends Controller
                     '2' => 'Schwarzweiß',
                 ),
                 'label' => 'Farbe',
-                'empty_value' => 'Alle',
-                'empty_data' => null,
-                'required' => false,
             ))
             ->add('width', 'text', array('label' => 'Breite in px', 'required' => false))
             ->add('height', 'text', array('label' => 'Höhe in px', 'required' => false))
@@ -78,7 +72,7 @@ class PhotoController extends Controller
 	}
 
 	/**
-	 * @Route("/export")
+	 * @Route("/export.xml")
 	 * @Method("GET")
 	 */
 	public function exportAction()
@@ -96,8 +90,19 @@ class PhotoController extends Controller
 		$templating = $this->get('templating');
 		$content = $templating->render(
 		    'HTWPhotoWebBundle:Photo:export.html.twig',
-		    array('photos' => $query->getResult())
-		);
+		    array(
+		    	'photos' => $query->getResult(), 
+		    	'formats' => array(
+                    1 => 'Quadratisch',
+                    2 => 'Hochformat',
+                    3 => 'Querformat',
+                    4 => 'Panorama'
+                ),
+                'colors' =>  array(
+                    1 => 'Farbe',
+                    2 => 'Schwarzweiß',
+                )
+		));
 
 		$response = new Response($content);
 		$response->headers->set('Content-Type', 'application/xml');

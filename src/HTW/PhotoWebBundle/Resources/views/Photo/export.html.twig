@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset('xml/picture.xsl') }}" ?>
 
-<photos>
+<pictures xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset('xml/picture.xsd') }}">
+    <title>Bilder Photoweb</title>
     {% for photo in photos %}
-        <photo id="{{ photo.id }}">
+        <picture id="{{ photo.id }}">
             <name>{{ photo.name }}</name>
             <description>{{ photo.description }}</description>
             <path>{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset(photo.webpath) }}</path>
-        </photo>
+            <format>{{ formats[photo.format] }}</format>
+            <color>{{ colors[photo.color] }}</color>
+            <width>{{ photo.width|default('0') }}</width>
+            <height>{{ photo.height|default('0') }}</height>
+        </picture>
     {% endfor %}
-</photos>
+</pictures>

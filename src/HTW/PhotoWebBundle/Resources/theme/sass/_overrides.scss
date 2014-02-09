@@ -152,3 +152,16 @@ footer {
         margin-bottom: 15px;
     }
 }
+
+
+form {
+	ul {
+		margin: rem-calc(-8) 0 0 0;
+		font-size: rem-calc(12);
+		color: red;
+
+		li {
+			list-style-type: none;
+		}
+	}
+}
