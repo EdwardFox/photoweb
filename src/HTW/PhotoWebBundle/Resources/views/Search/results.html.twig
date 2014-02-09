@@ -13,7 +13,7 @@
             <div class="small-8 medium-8 large-8 columns contentbar">
                 <div class="popup-gallery">
                     {% if pagination is empty %}
-                        <p>Keine Photos gefunden</p>
+                        <p>Keine Fotos gefunden</p>
                     {% else %}
                         {% for photo in pagination %}
                             <a class="th" href="{{ asset(photo.getWebPath()) }}" title="{{ photo.getName() }}"><img src="{{ photo.getWebPath() | imagine_filter('thumbnail') }}" alt="" /></a>

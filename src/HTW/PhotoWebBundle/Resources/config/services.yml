@@ -1,11 +1,12 @@
 parameters:
-    htw_photo_web.login_success_handler.class: HTW\PhotoWebBundle\Component\Authentication\Handler\LoginSuccessHandler
+    security.authentication.success_handler.class: HTW\PhotoWebBundle\Component\Authentication\Handler\LoginSuccessHandler
     htw_photo_web.login_failure_handler.class: HTW\PhotoWebBundle\Component\Authentication\Handler\LoginFailureHandler
 
 services:
-    htw_photo_web.login_success_handler:
-        class:  %htw_photo_web.login_success_handler.class%
-        parent: security.authentication.success_handler
+    security.authentication.success_handler:
+        class: %security.authentication.success_handler.class%
+        public: false
+        arguments:  ['@security.http_utils', {}]
 
     htw_photo_web.login_failure_handler:
         class:  %htw_photo_web.login_failure_handler.class%
