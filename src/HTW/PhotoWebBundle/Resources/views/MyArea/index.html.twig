@@ -17,8 +17,17 @@
 	</div>
 
 	<div class="popup-gallery">
-		{% for photo in photos %}
-		    <a class="th" href="{{ asset(photo.getWebPath()) }}" title="{{ photo.getName() }}"><img alt="" src="{{ photo.getWebPath() | imagine_filter('thumbnail') }}"></a>
-		{% endfor %}
+        {% if pagination is empty %}
+            <p>Keine Photos gefunden</p>
+        {% else %}
+            {% for photo in pagination %}
+                <a class="th" href="{{ asset(photo.getWebPath()) }}" title="{{ photo.getName() }}"><img src="{{ photo.getWebPath() | imagine_filter('thumbnail') }}" alt="" /></a>
+            {% endfor %}
+        {% endif %}
 	</div>
+
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+
 {% endblock %}
