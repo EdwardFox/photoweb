@@ -16,8 +16,8 @@
                         <th style="padding:5px;">Pfad</th>
                         <th style="padding:5px;">Format</th>
                         <th style="padding:5px;">Farbe/Schwarzweiß</th>
-                        <th style="padding:5px;">Höhe</th>
                         <th style="padding:5px;">Breite</th>
+                        <th style="padding:5px;">Höhe</th>
                     </tr>
                     <xsl:for-each select="pictures/picture">          
           
@@ -41,7 +41,7 @@
                                 <xsl:value-of select="width" /> 
                             </td>
                             <td style="padding:5px;">
-                                <xsl:value-of select="heigth" /> 
+                                <xsl:value-of select="height" /> 
                             </td>
                         </tr>
                     </xsl:for-each>
