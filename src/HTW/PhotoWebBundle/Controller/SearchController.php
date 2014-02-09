@@ -38,7 +38,7 @@ class SearchController extends Controller
 
         $form = $this->createFormBuilder($defaultValues)
             ->setAction($this->generateUrl('htw_photoweb_search_form'))
-            ->add('name', 'text')
+            ->add('name', 'text', array('required' => false))
             ->add('format', 'choice', array(
                 'choices' => array(
                     '1' => 'Quadratisch',

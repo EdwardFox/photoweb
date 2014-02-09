@@ -6,9 +6,9 @@
 	<h2>Meine Fotos</h2>
 	
 	{% for flashMessage in app.session.flashbag.get('notice') %}
-	    <div class="alert-box radius">
-	        {{ flashMessage }}
-	    </div>
+		<div class="alert-box radius">
+			{{ flashMessage }}
+		</div>
 	{% endfor %}
 
 	<div>
@@ -17,10 +17,15 @@
 	</div>
 
 	<div class="popup-gallery">
-		{% for photo in photos %}
-		    <a class="th" href="{{ asset(photo.getWebPath()) }}" title="{{ photo.getName() }}"><img alt="" src="{{ photo.getWebPath() | imagine_filter('thumbnail') }}"></a>
+		{% for photo in pagination %}
+			<a class="th" href="{{ asset(photo.getWebPath()) }}" title="{{ photo.getName() }}"><img src="{{ photo.getWebPath() | imagine_filter('thumbnail') }}" alt="" /></a>
 		{% else %}
-			Es wurden bisher noch keine Fotos hochgeladen.
+			<p>Es wurden bisher noch keine Fotos hochgeladen.</p>
 		{% endfor %}
 	</div>
+
+	<div class="navigation">
+		{{ knp_pagination_render(pagination) }}
+	</div>
+
 {% endblock %}

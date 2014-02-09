@@ -32,6 +32,15 @@ class MyAreaController extends Controller
                             ->setParameter('userID', $userID)
                             ->getQuery();
 
-        return array('photos' => $query->getResult());
+        //return array('photos' => $query->getResult());
+
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query,
+            $this->get('request')->query->get('page', 1),
+            18
+        );
+
+        return $this->render('HTWPhotoWebBundle:MyArea:index.html.twig', array('pagination' => $pagination));
     }
 }
