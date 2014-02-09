@@ -58,7 +58,7 @@ class PhotoController extends Controller
 			$em->flush();
 
 
-			$this->get('session')->getFlashBag()->add('notice', 'Your image was uploaded successfully'); 
+			$this->get('session')->getFlashBag()->add('notice', 'Das Bild wurde erfolgreich hinzugefügt!'); 
 
 			// Stay on the upload page if second button is clicked
 			if($form->get('saveAndAdd')->isClicked()) {
