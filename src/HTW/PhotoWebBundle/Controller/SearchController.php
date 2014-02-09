@@ -15,9 +15,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 class SearchController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/old")
      */
-    public function searchAction()
+    public function resultsAction()
     {
         return $this->render('HTWPhotoWebBundle:Search:search.html.twig');  
     }
@@ -83,11 +83,11 @@ class SearchController extends Controller
     }
 
     /**
-     * @Route("/results")
+     * @Route("/")
      */
-    public function resultsAction(Request $request)
+    public function searchAction(Request $request)
     {
-        $name = $request->query->get('name');
+        $name = $request->query->get('name') ? $request->query->get('name') : '%';
         $format = $request->query->get('format') ? $request->query->get('format') : '%';
         $color = $request->query->get('color') ? $request->query->get('color') : '%';
         $width = $request->query->get('width') ? $request->query->get('width') : '%';
