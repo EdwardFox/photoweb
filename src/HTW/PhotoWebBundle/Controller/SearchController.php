@@ -70,7 +70,7 @@ class SearchController extends Controller
         if ($form->isValid()) {
             $data = $form->getData();
 
-            return $this->redirect($this->generateUrl('htw_photoweb_search_results', array(
+            return $this->redirect($this->generateUrl('htw_photoweb_search_search', array(
                 'name' => $data['name'],
                 'format' => $data['format'],
                 'color' => $data['color'],
