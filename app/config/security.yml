@@ -20,6 +20,7 @@ security:
         main:
             pattern: ^/
             form_login:
+                use_referer: true
                 provider: fos_userbundle
                 csrf_provider: form.csrf_provider
                 failure_handler: htw_photo_web.login_failure_handler
