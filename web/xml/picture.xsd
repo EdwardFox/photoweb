@@ -10,7 +10,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="title" type="xs:string" />
-				<xs:element name="picture" type="PictureTyp" maxOccurs="unbounded" />
+				<xs:element name="picture" type="PictureTyp" minOccurs="0" maxOccurs="unbounded" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
